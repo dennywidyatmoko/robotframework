@@ -22,6 +22,8 @@ FirstSelenium
     Log    sukses    
     Close Browser
     #Log    ditest oleh    %{username} dan %{OS}
+SecondTest
+    Log    halo ini test keempat    
 
 *** Variables ***
 ${URL}    https://opensource-demo.orangehrmlive.com/
