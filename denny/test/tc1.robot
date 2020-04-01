@@ -10,7 +10,7 @@ Test Teardown    Log    saya ada di test teardown
 Login
     Log    hello  
 FirstSelenium
-    Open Browser    ${URL}
+    Open Browser    ${URL}    ${Browser}
     Set Browser Implicit Wait    3
     LoginKW
     Set Browser Implicit Wait    3
@@ -26,6 +26,7 @@ SecondTest
     Log    halo ini test keempat    
 
 *** Variables ***
+${Browser}    headlessFirefox
 ${URL}    https://opensource-demo.orangehrmlive.com/
 @{CREDENTIALS}    admin    admin123
 &{LOGINDATA}    username=admin    pass=admin123
