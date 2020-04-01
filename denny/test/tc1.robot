@@ -19,7 +19,7 @@ FirstSelenium
     Click Element      id=welcome
     Set Browser Implicit Wait    3
     Click Element    link=Logout             
-    Log    sukses    
+    Log    sukses ini running headless hlo    
     Close Browser
     #Log    ditest oleh    %{username} dan %{OS}
 SecondTest
