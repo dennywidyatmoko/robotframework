@@ -1,14 +1,14 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../Resources/Resource1.robot
+Library    SeleniumLibrary    
+
  
 *** Variables ***
 ${URL}    http://sebangsa.com
-${Browser}    headlessfirefox 
+${Browser}   firefox 
 @{CREDENTIALS}    testrobot    testrobot123
-&{LOGINDATA}    username=testrobot    pass=testrobot123
+&{LOGINDATA}    username=testrobot    pass=123456
 
-*** Test Cases ***    
+*** Keywords ***
 LoginSBS
    Open Browser    ${URL}    ${Browser}
    Set Browser Implicit Wait    3
@@ -18,10 +18,11 @@ LoginSBS
    Input Text    id=password    &{LOGINDATA}[pass]
    Click Element   xpath=/html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/form/p[2]/button
    Set Browser Implicit Wait    3
-   Log    login sukses       
-
-LoginOpenHRM
-    LoginKW
-    Log    sukses   
-    Close Browser
-  
+   Log    login sukses
+   
+Logout
+    Click Element    xpath=/html/body/div[1]/div[1]/div[3]/div/nav/div/div[4]/div/a
+    Set Browser Implicit Wait    3
+    Click Button    xpath=/html/body/div[1]/div[1]/div[3]/div/nav/div/div[4]/div/div/ul/li[4]/a    
+    Set Browser Implicit Wait    3
+    Close Browser          

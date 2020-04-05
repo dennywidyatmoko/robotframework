@@ -1,17 +1,16 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/Resource1.robot
+
 Suite Setup    Log    saya ada di Suite setup    
 Suite Teardown    Log    saya ada di suite teardown    
 Test Setup    Log    Saya ada di test setup    
 Test Teardown    Log    saya ada di test teardown     
-   
 
 *** Test Cases ***
 Login
     Log    hello  
 FirstSelenium
-    Open Browser    ${URL}    ${Browser}
-    Set Browser Implicit Wait    3
     LoginKW
     Set Browser Implicit Wait    3
     Element Text Should Be    id=welcome    Welcome Admin
@@ -33,6 +32,8 @@ ${URL}    https://opensource-demo.orangehrmlive.com/
       
 *** Keywords ***
 LoginKW
+    Open Browser    ${URL}    ${Browser}
+    Set Browser Implicit Wait    3
     Input Text    name=txtUsername    @{CREDENTIALS}[0]
     Input Text    name=txtPassword    &{LOGINDATA}[pass]    
     Click Button    id=btnLogin

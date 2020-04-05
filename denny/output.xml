@@ -1,153 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.7 on win32)" generated="20200401 14:53:54.527" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.7 on win32)" generated="20200404 09:07:54.578" rpa="false">
 <suite id="s1" name="Denny" source="C:\Users\win7\git\robotframework\denny">
 <suite id="s1-s1" name="Test" source="C:\Users\win7\git\robotframework\denny\test">
-<suite id="s1-s1-s1" name="Tc1" source="C:\Users\win7\git\robotframework\denny\test\tc1.robot">
-<kw name="Log" library="BuiltIn" type="setup">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>saya ada di Suite setup</arg>
-</arguments>
-<msg timestamp="20200401 14:53:54.943" level="INFO">saya ada di Suite setup</msg>
-<status status="PASS" starttime="20200401 14:53:54.943" endtime="20200401 14:53:54.943"></status>
-</kw>
-<test id="s1-s1-s1-t1" name="FirstSelenium">
-<kw name="Log" library="BuiltIn" type="setup">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>Saya ada di test setup</arg>
-</arguments>
-<msg timestamp="20200401 14:53:54.945" level="INFO">Saya ada di test setup</msg>
-<status status="PASS" starttime="20200401 14:53:54.945" endtime="20200401 14:53:54.946"></status>
-</kw>
+<suite id="s1-s1-s1" name="Tc2" source="C:\Users\win7\git\robotframework\denny\test\tc2.robot">
+<test id="s1-s1-s1-t1" name="LoginSBS">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20200401 14:53:54.947" level="INFO">Opening browser 'headlessFirefox' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<msg timestamp="20200401 14:53:54.951" level="INFO">Firefox driver log is always forced to to: C:\Users\win7\git\robotframework\denny\geckodriver-32.log</msg>
-<status status="PASS" starttime="20200401 14:53:54.946" endtime="20200401 14:54:07.762"></status>
+<msg timestamp="20200404 09:07:55.262" level="INFO">Opening browser 'headlessfirefox' to base url 'http://sebangsa.com'.</msg>
+<msg timestamp="20200404 09:07:55.268" level="INFO">Firefox driver log is always forced to to: C:\Users\win7\git\robotframework\denny\geckodriver-37.log</msg>
+<status status="PASS" starttime="20200404 09:07:55.261" endtime="20200404 09:08:08.581"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>3</arg>
 </arguments>
-<status status="PASS" starttime="20200401 14:54:07.762" endtime="20200401 14:54:07.770"></status>
+<status status="PASS" starttime="20200404 09:08:08.582" endtime="20200404 09:08:08.599"></status>
 </kw>
-<kw name="LoginKW">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=dropbtn-login</arg>
+</arguments>
+<msg timestamp="20200404 09:08:08.601" level="INFO">Clicking element 'id=dropbtn-login'.</msg>
+<status status="PASS" starttime="20200404 09:08:08.600" endtime="20200404 09:08:08.847"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20200404 09:08:08.847" endtime="20200404 09:08:08.851"></status>
+</kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>name=txtUsername</arg>
+<arg>id=username</arg>
 <arg>@{CREDENTIALS}[0]</arg>
 </arguments>
-<msg timestamp="20200401 14:54:07.771" level="INFO">Typing text 'admin' into text field 'name=txtUsername'.</msg>
-<status status="PASS" starttime="20200401 14:54:07.771" endtime="20200401 14:54:07.803"></status>
+<msg timestamp="20200404 09:08:08.852" level="INFO">Typing text 'testrobot' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20200404 09:08:08.851" endtime="20200404 09:08:08.910"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>name=txtPassword</arg>
+<arg>id=password</arg>
 <arg>&amp;{LOGINDATA}[pass]</arg>
 </arguments>
-<msg timestamp="20200401 14:54:07.804" level="INFO">Typing text 'admin123' into text field 'name=txtPassword'.</msg>
-<status status="PASS" starttime="20200401 14:54:07.803" endtime="20200401 14:54:07.832"></status>
+<msg timestamp="20200404 09:08:08.911" level="INFO">Typing text 'testrobot123' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20200404 09:08:08.910" endtime="20200404 09:08:08.963"></status>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>id=btnLogin</arg>
+<arg>xpath=/html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/form/p[2]/button</arg>
 </arguments>
-<msg timestamp="20200401 14:54:07.833" level="INFO">Clicking button 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20200401 14:54:07.833" endtime="20200401 14:54:09.780"></status>
-</kw>
-<status status="PASS" starttime="20200401 14:54:07.770" endtime="20200401 14:54:09.780"></status>
+<msg timestamp="20200404 09:08:08.964" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/form/p[2]/button'.</msg>
+<status status="PASS" starttime="20200404 09:08:08.964" endtime="20200404 09:08:09.281"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>3</arg>
 </arguments>
-<status status="PASS" starttime="20200401 14:54:09.781" endtime="20200401 14:54:09.785"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>id=welcome</arg>
-<arg>Welcome Admin</arg>
-</arguments>
-<msg timestamp="20200401 14:54:09.785" level="INFO">Verifying element 'id=welcome' contains exact text 'Welcome Admin'.</msg>
-<status status="PASS" starttime="20200401 14:54:09.785" endtime="20200401 14:54:09.806"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3</arg>
-</arguments>
-<msg timestamp="20200401 14:54:12.807" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200401 14:54:09.807" endtime="20200401 14:54:12.807"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=welcome</arg>
-</arguments>
-<msg timestamp="20200401 14:54:12.809" level="INFO">Clicking element 'id=welcome'.</msg>
-<status status="PASS" starttime="20200401 14:54:12.808" endtime="20200401 14:54:13.051"></status>
-</kw>
-<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<arguments>
-<arg>3</arg>
-</arguments>
-<status status="PASS" starttime="20200401 14:54:13.051" endtime="20200401 14:54:13.056"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>link=Logout</arg>
-</arguments>
-<msg timestamp="20200401 14:54:13.057" level="INFO">Clicking element 'link=Logout'.</msg>
-<status status="PASS" starttime="20200401 14:54:13.056" endtime="20200401 14:54:14.834"></status>
+<status status="PASS" starttime="20200404 09:08:09.281" endtime="20200404 09:08:09.286"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>sukses</arg>
+<arg>login sukses</arg>
 </arguments>
-<msg timestamp="20200401 14:54:14.836" level="INFO">sukses</msg>
-<status status="PASS" starttime="20200401 14:54:14.835" endtime="20200401 14:54:14.837"></status>
+<msg timestamp="20200404 09:08:09.287" level="INFO">login sukses</msg>
+<status status="PASS" starttime="20200404 09:08:09.286" endtime="20200404 09:08:09.288"></status>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200401 14:54:14.837" endtime="20200401 14:54:16.362"></status>
-</kw>
-<kw name="Log" library="BuiltIn" type="teardown">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>saya ada di test teardown</arg>
-</arguments>
-<msg timestamp="20200401 14:54:16.363" level="INFO">saya ada di test teardown</msg>
-<status status="PASS" starttime="20200401 14:54:16.362" endtime="20200401 14:54:16.363"></status>
-</kw>
-<status status="PASS" starttime="20200401 14:53:54.944" endtime="20200401 14:54:16.363" critical="yes"></status>
+<status status="PASS" starttime="20200404 09:07:55.260" endtime="20200404 09:08:09.288" critical="yes"></status>
 </test>
-<kw name="Log" library="BuiltIn" type="teardown">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>saya ada di suite teardown</arg>
-</arguments>
-<msg timestamp="20200401 14:54:16.364" level="INFO">saya ada di suite teardown</msg>
-<status status="PASS" starttime="20200401 14:54:16.364" endtime="20200401 14:54:16.365"></status>
-</kw>
-<status status="PASS" starttime="20200401 14:53:54.676" endtime="20200401 14:54:16.365"></status>
+<status status="PASS" starttime="20200404 09:07:54.993" endtime="20200404 09:08:09.290"></status>
 </suite>
-<status status="PASS" starttime="20200401 14:53:54.671" endtime="20200401 14:54:16.367"></status>
+<status status="PASS" starttime="20200404 09:07:54.989" endtime="20200404 09:08:09.294"></status>
 </suite>
-<status status="PASS" starttime="20200401 14:53:54.639" endtime="20200401 14:54:16.369"></status>
+<status status="PASS" starttime="20200404 09:07:54.953" endtime="20200404 09:08:09.298"></status>
 </suite>
 <statistics>
 <total>
@@ -159,7 +95,7 @@
 <suite>
 <stat pass="1" fail="0" id="s1" name="Denny">Denny</stat>
 <stat pass="1" fail="0" id="s1-s1" name="Test">Denny.Test</stat>
-<stat pass="1" fail="0" id="s1-s1-s1" name="Tc1">Denny.Test.Tc1</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Tc2">Denny.Test.Tc2</stat>
 </suite>
 </statistics>
 <errors>
