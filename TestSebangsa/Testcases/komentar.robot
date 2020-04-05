@@ -15,7 +15,7 @@ Komentar
     Input Text    id=home_timeline    ${RANTXT}
     Set Browser Implicit Wait    3
     Click Button    id=btn_save_home_timeline    
-    Set Browser Implicit Wait    3  
+    Sleep    5  
     Get Title     
     Log    sukses post 
     Close Browser
